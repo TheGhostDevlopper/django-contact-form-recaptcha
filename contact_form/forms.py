@@ -19,6 +19,10 @@ class ContactForm(forms.Form):
     """
     name = forms.CharField(max_length=100,
                            label=_(u'Your name'))
+    last_name = forms.CharField(max_length=100,
+                                label=_(u'Your last name'))
+    phone_number = forms.CharField(max_length=100,
+                                   label=_(u'Your phone number'))
     email = forms.EmailField(max_length=200,
                              label=_(u'Your email address'))
     title = forms.CharField(max_length=200,
@@ -191,7 +195,7 @@ class ReCaptchaContactForm(ContactForm):
     import os
     from captcha.fields import ReCaptchaField
     captcha = ReCaptchaField(
-      attrs={'lang': getattr(settings, 'RECAPTCHA_LANG', None),
-             'RECAPTCHA_PUBLIC_KEY': os.getenv('PYTHON_RECAPTCHA_PUBLIC_KEY'),
-             'RECAPTCHA_PRIVATE_KEY': os.getenv('PYTHON_RECAPTCHA_PRIVATE_KEY')
-             })
+        attrs={'lang': getattr(settings, 'RECAPTCHA_LANG', None),
+               'RECAPTCHA_PUBLIC_KEY': os.getenv('PYTHON_RECAPTCHA_PUBLIC_KEY'),
+               'RECAPTCHA_PRIVATE_KEY': os.getenv('PYTHON_RECAPTCHA_PRIVATE_KEY')
+               })
