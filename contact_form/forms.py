@@ -196,6 +196,6 @@ class ReCaptchaContactForm(ContactForm):
     from captcha.fields import ReCaptchaField
     captcha = ReCaptchaField(
         attrs={'lang': getattr(settings, 'RECAPTCHA_LANG', None),
-               'RECAPTCHA_PUBLIC_KEY': os.getenv('PYTHON_RECAPTCHA_PUBLIC_KEY'),
-               'RECAPTCHA_PRIVATE_KEY': os.getenv('PYTHON_RECAPTCHA_PRIVATE_KEY')
+               'RECAPTCHA_PUBLIC_KEY': settings.RECAPTCHA_PUBLIC_KEY,
+               'RECAPTCHA_PRIVATE_KEY': settings.RECAPTCHA_PRIVATE_KEY
                })
