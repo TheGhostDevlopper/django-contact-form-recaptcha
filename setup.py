@@ -4,8 +4,8 @@ from setuptools import setup
 
 
 setup(name='django-contact-form-recaptcha',
-      version='1.6.0',
-      zip_safe=False, # eggs are the devil.
+      version='1.7.0',
+      zip_safe=False,  # eggs are the devil.
       include_package_data=True,
       description='A generic contact-form application for Django',
       long_description=open(os.path.join(os.path.dirname(__file__),
@@ -37,4 +37,4 @@ setup(name='django-contact-form-recaptcha',
       extras_require={
           'akismet': ['akismet'],
       },
-)
+      )
